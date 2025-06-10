@@ -1,6 +1,6 @@
-# Corso: Linux Essential with Bash
+# Linux Essentials with Bash
 
-Benvenuti al corso "Linux Essential with Bash"! Questo corso è progettato per fornirvi una solida comprensione del sistema operativo Linux e delle basi dello scripting Bash. Attraverso un percorso strutturato, imparerete a utilizzare il terminale Linux, eseguire comandi essenziali, gestire file e processi, e creare script Bash per automatizzare attività ripetitive.
+Benvenuti al corso "Linux Essentials with Bash"! Questo corso è progettato per fornirvi una solida comprensione del sistema operativo Linux e delle basi dello scripting Bash. Attraverso un percorso strutturato, imparerete a utilizzare il terminale Linux, eseguire comandi essenziali, gestire file e processi, e creare script Bash per automatizzare attività ripetitive.
 
 ## Struttura del Corso
 
