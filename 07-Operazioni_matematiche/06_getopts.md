@@ -189,5 +189,5 @@ eval set -- "$opts"
 ## Navigazione
 
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<04_menu_select.md>)
+- [⬅️ precedente](<05_menu_select.md>)
 - [➡️ successivo](<../08_Manipolazione_Stringhe/README.md>)

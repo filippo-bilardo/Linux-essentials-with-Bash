@@ -179,5 +179,5 @@ separatore
 ## Navigazione
 
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<02_parametri_posizionali.md>)
-- [➡️ successivo](<04_menu_select.md>)
+- [⬅️ precedente](<03_array_bash.md>)
+- [➡️ successivo](<05_menu_select.md>)

@@ -184,6 +184,128 @@ exit 0
 
 ---
 
+## Debugging
+
+### Opzioni da riga di comando
+
+| Opzione | Significato |
+|---------|-------------|
+| `bash -n script.sh` | **Syntax check** — analizza la sintassi senza eseguire |
+| `bash -v script.sh` | **Verbose** — stampa ogni riga prima di eseguirla |
+| `bash -x script.sh` | **Trace** — stampa ogni comando espanso prima di eseguirlo |
+| `bash -xv script.sh` | Combina trace e verbose |
+
+```bash
+bash -n mio_script.sh       # controlla la sintassi
+bash -x mio_script.sh       # esegue con trace
+```
+
+### Attivare/disattivare il trace dentro lo script
+
+`set -x` e `set +x` permettono di limitare il trace a una porzione dello script:
+
+```bash
+#!/bin/bash
+echo "Questa parte non viene tracciata"
+
+set -x          # attiva il trace
+risultato=$(( 3 * 7 ))
+echo "Risultato: $risultato"
+set +x          # disattiva il trace
+
+echo "Di nuovo silenzioso"
+```
+
+Output del trace (prefisso `+`):
+```
++ risultato=21
++ echo 'Risultato: 21'
+Risultato: 21
+```
+
+### Personalizzare il prefisso trace con `PS4`
+
+```bash
+export PS4='[${BASH_SOURCE}:${LINENO}] '
+set -x
+# Ora ogni riga tracciata mostra: [nomefile:numero_riga]
+```
+
+### Opzioni di sicurezza (`set -euo pipefail`)
+
+Aggiungile all'inizio dello script per rilevare errori immediatamente:
+
+```bash
+#!/bin/bash
+set -e          # esce subito se un comando fallisce (exit status != 0)
+set -u          # errore se si usa una variabile non definita
+set -o pipefail # propaga il fallimento all'interno di una pipe
+# Forma compatta (idioma comune):
+set -euo pipefail
+```
+
+Esempio d'uso:
+```bash
+#!/bin/bash
+set -euo pipefail
+
+NOME=$1             # con -u: errore se $1 non è passato
+cat "$NOME"         # con -e: esce se cat fallisce
+grep "pattern" "$NOME" | wc -l   # con pipefail: errore se grep fallisce
+```
+
+> **Attenzione:** `set -e` può essere sorprendente in costrutti come `if comando; ...`
+> o `valore=$(comando) || gestisci_errore` — in quei contesti il failure
+> è già gestito e `set -e` non termina lo script.
+
+### Stampare messaggi di debug condizionali
+
+```bash
+#!/bin/bash
+DEBUG=${DEBUG:-0}   # attiva con: DEBUG=1 ./script.sh
+
+debug() {
+    [[ "$DEBUG" -eq 1 ]] && echo "[DEBUG] $*" >&2
+}
+
+debug "Avvio elaborazione"
+risultato=$(( 6 * 9 ))
+debug "risultato=$risultato"
+echo "Fatto."
+```
+
+Esecuzione:
+```bash
+./script.sh             # nessun output di debug
+DEBUG=1 ./script.sh     # mostra i messaggi [DEBUG]
+```
+
+### `trap ERR` — catturare errori automaticamente
+
+```bash
+#!/bin/bash
+set -euo pipefail
+
+trap 'echo "Errore alla riga $LINENO (exit: $?)" >&2' ERR
+
+echo "Passo 1"
+ls /cartella_inesistente   # il trap scatta qui
+echo "Passo 2 (non raggiunto)"
+```
+
+### Riepilogo strumenti di debugging
+
+| Strumento | Quando usarlo |
+|-----------|---------------|
+| `bash -n` | Controlla la sintassi prima di eseguire |
+| `bash -x` | Seguire il flusso di esecuzione passo-passo |
+| `set -euo pipefail` | Prevenire errori silenziosi in produzione |
+| `PS4` personalizzato | Identificare esattamente la riga che produce un output |
+| Funzione `debug()` | Log condizionale senza modificare il codice |
+| `trap ERR` | Intercettare e loggare ogni comando fallito |
+
+---
+
 ## Navigazione
 
 - [📑 Indice](<README.md>)

@@ -146,5 +146,5 @@ done
 ## Navigazione
 
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<03_output_formattazione.md>)
-- [➡️ successivo](<05_getopts.md>)
+- [⬅️ precedente](<04_output_formattazione.md>)
+- [➡️ successivo](<06_getopts.md>)

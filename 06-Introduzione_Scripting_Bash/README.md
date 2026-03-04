@@ -8,6 +8,7 @@ Al termine di questo modulo sarai in grado di:
 - Usare variabili scalari, variabili d'ambiente e parametri posizionali
 - Leggere input dall'utente con `read`
 - Controllare il flusso con `if`, `for`, `while` e `case`
+- Usare l'exit status per scrivere script robusti
 - Definire e chiamare funzioni riutilizzabili
 
 ---
@@ -27,12 +28,24 @@ Al termine di questo modulo sarai in grado di:
    - Input interattivo con `read`
    - Espansione e quoting: `""`, `''`, `\`
 
-3. [Strutture di Controllo](./03_strutture_controllo.md)
+3. [Strutture Condizionali](./03_strutture_condizionali.md)
    - Condizionale `if / elif / else / fi`
    - Test con `[[ ]]`: confronto numeri, stringhe, file
-   - Ciclo `for` (lista, range, array)
-   - Ciclo `while` e `until`
-   - `case ... esac` per menu
+   - Operatori logici `&&`, `||`, `!`
+   - `case ... esac` per menu e pattern matching
+
+4. [Strutture Iterative](./04_strutture_iterative.md)
+   - Ciclo `for` (lista, range, stile C, file, output comandi)
+   - Ciclo `while` e lettura di file
+   - Ciclo `until`
+   - `break` e `continue` (anche annidati)
+
+5. [Exit Status e Comando `exit`](./05_exit_status.md)
+   - `$?` e i codici di uscita standard
+   - `exit N` e convenzioni per i codici
+   - `if comando`: branching sull'exit status
+   - Shorthand `&&` / `||`
+   - `trap` per pulizia e gestione segnali
 
 ---
 
