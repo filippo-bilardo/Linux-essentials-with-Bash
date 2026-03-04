@@ -33,12 +33,6 @@ Non è richiesta alcuna esperienza pregressa: si parte dai fondamenti e si arriv
     1. Redirezione
     2. Pipe
 6. [06 - Introduzione allo Scripting Bash](./06-Introduzione_Scripting_Bash/README.md)
-    1. Shebang e il linguaggi di scripting
-    2. Il primo script Bash: struttura, creazione, esecuzione
-    3. Variabili, input/output e comandi di base (quoting, `echo`, `read`, `clear`, `date`, `uname`)
-    4. L'exit status dei comandi e la gestione degli errori
-    5. Il costrutto `if` per il controllo del flusso e altre strutture condizionali
-    6. Il comando test e le espressioni condizionali
 7. [07 - Operazioni matematiche e stringhe in Bash](./07-Operazioni_matematiche/README.md)
     1. Operazioni matematiche in Bash: `expr`, `let`, `$(( ))`
     2. I parametri posizionali

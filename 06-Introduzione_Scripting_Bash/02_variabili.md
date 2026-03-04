@@ -1,4 +1,4 @@
-# Variabili e Input
+# Variabili, tipi di dati e input in Bash
 
 ## Variabili Scalari
 
@@ -269,6 +269,31 @@ echo ${testo:6}       # dal carattere 6 in poi → Bash Scripting
 ## Tipi di Dati e `declare`
 
 Bash è un linguaggio a **tipizzazione debole**: ogni variabile è di default una stringa di testo. Tuttavia, il comando `declare` permette di aggiungere attributi che modificano il comportamento della variabile.
+
+### Tipi di dati usati internamente da Bash
+
+A differenza di linguaggi come C o Java, Bash non ha un sistema di tipi esplicito. Internamente riconosce tuttavia le seguenti categorie:
+
+| Tipo | Rappresentazione interna | Note |
+|------|--------------------------|------|
+| **Stringa** | sequenza di caratteri | Tipo di default; qualsiasi valore è una stringa se non diversamente dichiarato |
+| **Intero** | valore numerico intero (a 64 bit con segno su sistemi a 64-bit) | Abilitato con `declare -i`; non c'è overflow controllato, i valori "wrappano" |
+| **Array indicizzato** | lista ordinata di stringhe con indice numerico (0-based) | Dichiarato con `declare -a` o con la sintassi `arr=(...)` |
+| **Array associativo** | mappa chiave→valore, entrambi stringhe | Richiede `declare -A`; disponibile da Bash 4.0 |
+| **Nameref** | riferimento (alias) a un'altra variabile | Dichiarato con `declare -n`; il valore è il nome della variabile puntata |
+| **Sola lettura** | qualsiasi tipo reso immutabile | Attributo aggiuntivo applicabile con `declare -r` o `readonly` |
+| **Esportata** | variabile disponibile ai sottoprocessi | Attributo aggiuntivo (`declare -x` o `export`); il valore resta stringa |
+
+> **Nessun tipo floating point nativo.** Bash non supporta aritmetica in virgola mobile.
+> Per calcoli decimali usa il comando esterno `bc` o `awk`:
+> ```bash
+> echo "scale=4; 22/7" | bc          # 3.1428
+> awk 'BEGIN { printf "%.4f\n", 22/7 }'  # 3.1429
+> ```
+
+> **Nessun tipo booleano nativo.** Le condizioni si basano sull'**exit status**:
+> `0` = vero (successo), qualsiasi altro valore = falso. Le variabili vengono
+> trattate come stringa vuota (falso) o non vuota (vero) nei test con `[[ ]]`.
 
 ### Panoramica degli attributi `declare`
 
