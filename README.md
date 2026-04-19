@@ -12,46 +12,14 @@ Non è richiesta alcuna esperienza pregressa: si parte dai fondamenti e si arriv
 ## Indice del Corso
 
 1. [01. Introduzione al s.o. Linux](./01-Introduzione_al_so_Linux/README.md) 
-    1. Linux e i sistemi operativi più diffusi
-    2. Il mondo open source e la comunità Linux
-    3. Le principali applicazioni open source su Linux
-    4. Distribuzioni Linux: differenze e scelte
-    5. Competenze ICT - Lavorare con Linux
 2. [02. Utilizzo della Command Line](./02-Utilizzo_Command_Line/README.md)
-    1. La linea di comando
-    2. Ottenere aiuto e documentazione
 3. [03 - Lavorare con file e cartelle](./03-Lavorare_con_file_e_cartelle/README.md)
-    1. Il filesystem di Linux
-    2. Comandi di navigazione e gestione dei file
 4. [04 - Visualizzazione e ricerca nei file](./04-Visualizzazione_e_Ricerca/README.md)
-    1. Visualizzazione e ricerca nei file
-    2. L'editor di testo `nano` (altri `vim`, `emacs`)
-    3. Archiviazione e compressione dei file
-    4. Ricerca e filtraggio dei dati nei file
-    5. Estrazione di dati dai file
 5. [05 - Redirezione e Pipe](./05-Redirezione_e_Pipe/README.md)
-    1. Redirezione
-    2. Pipe
 6. [06 - Introduzione allo Scripting Bash](./06-Introduzione_Scripting_Bash/README.md)
 7. [07 - Operazioni matematiche e stringhe in Bash](./07-Operazioni_matematiche/README.md)
-    1. Operazioni matematiche in Bash: `expr`, `let`, `$(( ))`
-    2. I parametri posizionali
-    3. Il cicli `for`, `while` e `until` per l'iterazione
-    4. I codici ANSI per la colorazione del testo e la formattazione dell'output
-    5. Creazione di menu interattivi con `select` e `case`
-    6. Uso di `getopts` per la gestione delle opzioni degli script
 8. [08 - Manipolazione di stringhe in Bash](./08_Manipolazione_Stringhe/README.md)
-    1. Manipolazione di stringhe in Bash: concatenazione, lunghezza, estrazione, sostituzione
-    2. Espressioni regolari per la ricerca e la manipolazione di testo
-    3. Uso di `awk` per l'elaborazione avanzata di testo
-    4. Uso di `sed` per la manipolazione di testo e i flussi di dati
-    5. Uso di `grep` per la ricerca di testo nei file e nei flussi di dati
-    6. Uso di `cut`, `sort`, `uniq` e altri comandi per l'elaborazione di testo
-    7. Uso di `xargs` per costruire comandi da input
-    8. Uso di `tr` per la trasformazione di testo
-    9. Uso di `wc` per contare parole, righe e caratteri
-    10. Uso di `diff` per confrontare file e output
-    11. Uso di `tee` per scrivere output su file e terminale contemporaneamente
+
    
 
 5. [09 - Date e Orari in Bash](./09_Date_e_Orari/README.md)
@@ -60,8 +28,6 @@ Non è richiesta alcuna esperienza pregressa: si parte dai fondamenti e si arriv
     3. Calcoli con date e orari
     4. Uso di `cron` per la schedulazione di attività
     5. Uso di `at` per l'esecuzione di comandi a tempo
-
-
 5.  [Gestione di Utenti e Permessi](./03-Utenti-Permessi/README.md) - Controllo degli accessi e sicurezza
 6.  [Processi e Gestione dei Servizi](./04-Processi-Servizi/README.md) - Monitoraggio e controllo dei processi
 7.  [Networking di Base in Linux](./05-Networking-Base/README.md) - Configurazione e diagnostica della rete

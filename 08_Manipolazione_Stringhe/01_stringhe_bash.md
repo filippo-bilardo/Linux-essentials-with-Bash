@@ -19,7 +19,7 @@ echo ${#file}           # 24
 testo="Linux Bash Scripting"
 #      01234567890123456789
 
-echo ${testo:6:4}       # Bash      (4 caratteri dall'indice 6)
+echo ${testo:6:4}       # Bash       (4 caratteri dall'indice 6)
 echo ${testo:11}        # Scripting  (dall'indice 11 fino alla fine)
 echo ${testo: -9}       # Scripting  (9 caratteri dalla fine, nota lo spazio)
 echo ${testo: -9:4}     # Scri       (4 caratteri partendo da -9)
