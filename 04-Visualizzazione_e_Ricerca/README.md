@@ -28,6 +28,8 @@ Al termine di questo modulo sarai in grado di:
 ### Esempi
 - [Visualizzare e cercare nei file](esempi/01_visualizzazione.sh)
 - [Archivi e compressione](esempi/02_archivi.sh)
+- [Estrazione e analisi di dati con awk](esempi/03_awk.sh)
+- [Sostituzioni e trasformazioni con sed](esempi/04_sed.sh)
 
 ### Esercizi
 - [Esercizi del Modulo 04](esercizi/README.md)

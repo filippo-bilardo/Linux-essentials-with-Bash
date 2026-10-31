@@ -18,19 +18,7 @@ Metti in pratica i comandi di visualizzazione file, l'editor nano, l'archiviazio
 
 ---
 
-## Esercizio 2 — Monitorare un file di log
-
-1. Apri un terminale e avvia il monitoraggio in tempo reale del log di sistema:
-   ```bash
-   tail -f /var/log/syslog   # oppure /var/log/messages
-   ```
-2. In un secondo terminale, genera un evento (es. `logger "test esercizio 04"`).
-3. Osserva l'aggiornamento in tempo reale nel primo terminale.
-4. Termina il monitoraggio con `Ctrl+C`.
-
----
-
-## Esercizio 3 — Editor nano
+## Esercizio 2 — Editor nano
 
 1. Crea un nuovo file con nano:
    ```bash
@@ -43,7 +31,7 @@ Metti in pratica i comandi di visualizzazione file, l'editor nano, l'archiviazio
 
 ---
 
-## Esercizio 4 — Creare e gestire archivi tar
+## Esercizio 3 — Creare e gestire archivi tar
 
 1. Crea una directory `~/backup_test/` con almeno 3 file al suo interno.
 2. Crea un archivio compresso:
@@ -62,7 +50,7 @@ Metti in pratica i comandi di visualizzazione file, l'editor nano, l'archiviazio
 
 ---
 
-## Esercizio 5 — Ricerca con grep
+## Esercizio 4 — Ricerca con grep
 
 Crea il file `~/studenti.txt` con questo contenuto:
 ```
@@ -90,14 +78,10 @@ Franco Marino 20 Roma
    ```bash
    grep -i "alice" ~/studenti.txt
    ```
-5. Mostra solo le corrispondenze (non l'intera riga) con `-o`:
-   ```bash
-   grep -o "Roma\|Milano\|Napoli" ~/studenti.txt | sort | uniq -c
-   ```
 
 ---
 
-## Esercizio 6 — Ordinare e deduplicare
+## Esercizio 5 — Ordinare i dati
 
 Usando il file `~/studenti.txt` dell'esercizio precedente:
 
@@ -105,18 +89,14 @@ Usando il file `~/studenti.txt` dell'esercizio precedente:
    ```bash
    sort ~/studenti.txt
    ```
-2. Estrai solo le città (colonna 4) e mostra le uniche con il loro conteggio:
-   ```bash
-   cut -d ' ' -f 4 ~/studenti.txt | sort | uniq -c | sort -rn
-   ```
-3. Ordina per età (colonna 3) in modo numerico:
+2. Ordina per età (colonna 3) in modo numerico:
    ```bash
    sort -k3 -n ~/studenti.txt
    ```
 
 ---
 
-## Esercizio 7 — Estrazione dati con cut e awk
+## Esercizio 6 — Estrazione dati con awk
 
 Crea il file `~/inventario.csv`:
 ```
@@ -128,44 +108,13 @@ kiwi,20,1.50
 pere,35,0.90
 ```
 
-1. Estrai solo la colonna `prodotto` con `cut`:
-   ```bash
-   cut -d ',' -f 1 ~/inventario.csv | tail -n +2
-   ```
-2. Mostra i prodotti con prezzo superiore a €1.00 con `awk`:
+1. Mostra i prodotti con prezzo superiore a €1.00 con `awk`:
    ```bash
    awk -F ',' 'NR>1 && $3>1.00 {print $1, "→", $3"€"}' ~/inventario.csv
    ```
-3. Calcola il valore totale del magazzino (quantità × prezzo) con `awk`:
+2. Calcola il valore totale del magazzino (quantità × prezzo) con `awk`:
    ```bash
    awk -F ',' 'NR>1 {tot += $2*$3} END {printf "Valore totale: %.2f€\n", tot}' ~/inventario.csv
-   ```
-
----
-
-## Esercizio 8 — Pipeline avanzata (Sfida)
-
-Usando solo pipeline (senza creare file intermedi), risolvi le seguenti operazioni:
-
-1. Conta quanti utenti nel sistema usano `/bin/bash` come shell:
-   ```bash
-   grep -c '/bin/bash' /etc/passwd
-   ```
-2. Mostra i 3 processi che consumano più memoria (usa `ps aux`):
-   ```bash
-   ps aux --sort=-%mem | head -4
-   ```
-3. Trova i file `.log` in `/var/log` più grandi di 100KB e mostrali ordinati per dimensione:
-   ```bash
-   find /var/log -name "*.log" -size +100k -exec du -sh {} \; | sort -h
-   ```
-4. **Sfida finale**: Crea una pipeline che, partendo da `/etc/passwd`:
-   - Estrae solo gli utenti con UID ≥ 1000
-   - Mostra il loro nome utente e la home directory
-   - Ordina il risultato per nome utente
-
-   ```bash
-   awk -F ':' '$3>=1000 {print $1, $6}' /etc/passwd | sort
    ```
 
 ---
@@ -176,6 +125,8 @@ Per verificare le tue soluzioni, esegui gli script di esempio presenti in `../es
 ```bash
 bash ../esempi/01_visualizzazione.sh
 bash ../esempi/02_archivi.sh
+bash ../esempi/03_awk.sh
+bash ../esempi/04_sed.sh
 ```
 
 ---

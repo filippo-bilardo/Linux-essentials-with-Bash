@@ -29,3 +29,5 @@ env/
 # File specifici del progetto che non dovrebbero essere tracciati
 secrets.txt
 config.local.ini
+
+/tmp/
