@@ -32,6 +32,7 @@ Al termine di questo modulo sarai in grado di:
 
 ### Esercizi
 - [Esercizi del Modulo 03](esercizi/README.md)
+- [Sfida finale: selezione dei file, link e ripristino](esercizi/02-sifida.md)
 
 ---
 

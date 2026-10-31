@@ -30,6 +30,8 @@ Partendo dalla tua home (`~`), raggiungi le seguenti directory usando sia percor
 Usa sempre `pwd` per confermare dove ti trovi.
 
 **Bonus:** usa `cd -` per tornare alla directory precedente e verifica il risultato.
+**Suggerimento:** usa `cd ..` per salire di un livello nella gerarchia delle directory.
+usa `cd` per tornare alla home senza digitare il percorso completo.
 
 ---
 
@@ -46,6 +48,7 @@ Crea la seguente struttura di directory nella tua home:
 ├── script/
 └── backup/
 ```
+esegui il comando `tree ~/esercizio03` per visualizzare la struttura creata.
 
 **Suggerimento:** usa `mkdir -p` per creare più livelli in un colpo.  
 Poi verifica con `find ~/esercizio03 -type d`.
@@ -195,6 +198,12 @@ Crea uno script `~/backup_home.sh` che:
 3. Stampi un messaggio con quanti file sono stati copiati
 
 **Suggerimento:** usa `$(date +%Y%m%d)` per ottenere la data nel formato `20260304`.
+
+---
+
+## Sfida finale
+
+Metti alla prova le competenze del modulo con [tre esercizi avanzati su selezione dei file, link e ripristino degli archivi](02-sifida.md), senza pipe.
 
 ---
 
