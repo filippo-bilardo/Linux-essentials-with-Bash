@@ -309,5 +309,5 @@ echo "Passo 2 (non raggiunto)"
 ## Navigazione
 
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<../05-Redirezione_e_Pipe/02_pipe.md>)
+- [⬅️ precedente](<../05-Visualizzazione_e_Ricerca/04_pipeline_e_xargs.md>)
 - [➡️ successivo](<02_variabili.md>)

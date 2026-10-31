@@ -129,4 +129,4 @@ tar -xvf archivio.tar.bz2   # funziona anche senza -j
 
 - [📑 Indice](<README.md>)
 - [⬅️ precedente](<02_comandi_navigazione_gestione.md>)
-- [➡️ successivo](<../04-Visualizzazione_e_Ricerca/01_visualizzazione_file.md>)
+- [➡️ successivo](<../04-Redirezione_e_Pipe/01_redirezione.md>)

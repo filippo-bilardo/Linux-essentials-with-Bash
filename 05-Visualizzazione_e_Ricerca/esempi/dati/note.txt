@@ -1,0 +1,4 @@
+Linux organizza i file in directory.
+La shell esegue i comandi.
+Le pipe collegano i programmi.
+I filtri elaborano il testo.

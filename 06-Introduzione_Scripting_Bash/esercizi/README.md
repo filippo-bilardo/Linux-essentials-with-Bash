@@ -164,5 +164,5 @@ Backup totali conservati: 3
 ## Navigazione
 
 - [📑 Indice](<../README.md>)
-- [⬅️ precedente](<../../05-Redirezione_e_Pipe/esercizi/README.md>)
+- [⬅️ precedente](<../../05-Visualizzazione_e_Ricerca/esercizi/README.md>)
 - [➡️ successivo](<../../07-Operazioni_Matematiche_Stringhe/README.md>)

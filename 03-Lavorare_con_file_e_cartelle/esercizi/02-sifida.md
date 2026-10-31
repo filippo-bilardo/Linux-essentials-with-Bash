@@ -83,4 +83,4 @@ La sfida è completata se i risultati coincidono con tutte le verifiche, i vinco
 
 - [📑 Indice del modulo](../README.md)
 - [⬅️ Esercizi di base](README.md)
-- [➡️ Modulo successivo](../../04-Visualizzazione_e_Ricerca/README.md)
+- [➡️ Modulo successivo](../../04-Redirezione_e_Pipe/README.md)

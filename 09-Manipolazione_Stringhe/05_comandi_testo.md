@@ -185,7 +185,7 @@ patch originale.txt < modifiche.patch
 
 ## `tee` — Duplicare Flussi
 
-`tee` è già stato trattato nel modulo 05. Usi avanzati:
+`tee` è già stato trattato nel [modulo 04](../04-Redirezione_e_Pipe/03_pipe.md). Usi avanzati:
 
 ```bash
 # Scrivere su più file

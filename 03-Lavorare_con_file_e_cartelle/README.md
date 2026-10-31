@@ -55,4 +55,4 @@ Al termine di questo modulo sarai in grado di:
 
 - [📑 Indice](<../README.md>)
 - [⬅️ precedente](<../02-Utilizzo_Command_Line/README.md>)
-- [➡️ successivo](<../04-Visualizzazione_e_Ricerca/README.md>)
+- [➡️ successivo](<../04-Redirezione_e_Pipe/README.md>)

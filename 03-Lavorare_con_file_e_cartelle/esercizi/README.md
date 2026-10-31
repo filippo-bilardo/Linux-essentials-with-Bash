@@ -209,4 +209,4 @@ Metti alla prova le competenze del modulo con [tre esercizi avanzati su selezion
 
 - [📑 Indice](<../README.md>)
 - [⬅️ precedente](<../../02-Utilizzo_Command_Line/esercizi/README.md>)
-- [➡️ successivo](<../../04-Visualizzazione_e_Ricerca/README.md>)
+- [➡️ successivo](<../../04-Redirezione_e_Pipe/README.md>)
