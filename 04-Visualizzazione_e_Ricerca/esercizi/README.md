@@ -2,7 +2,7 @@
 
 ## Obiettivi
 
-Metti in pratica i comandi di visualizzazione file, l'editor nano, l'archiviazione e gli strumenti di ricerca e filtraggio trattati nel modulo.
+Metti in pratica i comandi di visualizzazione file, l'editor nano e gli strumenti di ricerca, filtraggio ed estrazione dei dati trattati nel modulo.
 
 ---
 
@@ -31,26 +31,7 @@ Metti in pratica i comandi di visualizzazione file, l'editor nano, l'archiviazio
 
 ---
 
-## Esercizio 3 — Creare e gestire archivi tar
-
-1. Crea una directory `~/backup_test/` con almeno 3 file al suo interno.
-2. Crea un archivio compresso:
-   ```bash
-   tar -czvf ~/archivio_test.tar.gz ~/backup_test/
-   ```
-3. Elenca il contenuto dell'archivio senza estrarlo:
-   ```bash
-   tar -tzvf ~/archivio_test.tar.gz
-   ```
-4. Crea una directory `~/ripristino/` ed estrai l'archivio lì:
-   ```bash
-   tar -xzvf ~/archivio_test.tar.gz -C ~/ripristino/
-   ```
-5. Verifica che i file siano stati ripristinati correttamente.
-
----
-
-## Esercizio 4 — Ricerca con grep
+## Esercizio 3 — Ricerca con grep
 
 Crea il file `~/studenti.txt` con questo contenuto:
 ```
@@ -81,7 +62,7 @@ Franco Marino 20 Roma
 
 ---
 
-## Esercizio 5 — Ordinare i dati
+## Esercizio 4 — Ordinare i dati
 
 Usando il file `~/studenti.txt` dell'esercizio precedente:
 
@@ -96,7 +77,7 @@ Usando il file `~/studenti.txt` dell'esercizio precedente:
 
 ---
 
-## Esercizio 6 — Estrazione dati con awk
+## Esercizio 5 — Estrazione dati con awk
 
 Crea il file `~/inventario.csv`:
 ```
@@ -124,7 +105,6 @@ pere,35,0.90
 Per verificare le tue soluzioni, esegui gli script di esempio presenti in `../esempi/`:
 ```bash
 bash ../esempi/01_visualizzazione.sh
-bash ../esempi/02_archivi.sh
 bash ../esempi/03_awk.sh
 bash ../esempi/04_sed.sh
 ```

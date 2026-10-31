@@ -148,4 +148,4 @@ Se ti trovi accidentalmente in `vim`, premi `Esc` poi digita `:q!` e premi `Ente
 
 - [📑 Indice](<README.md>)
 - [⬅️ precedente](<01_visualizzazione_file.md>)
-- [➡️ successivo](<03_archiviazione_compressione.md>)
+- [➡️ successivo](<04_ricerca_filtraggio.md>)

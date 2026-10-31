@@ -148,4 +148,5 @@ journalctl --since "1 hour ago"
 ---
 
 - [📑 Indice](<README.md>)
+- [⬅️ precedente](<../03-Lavorare_con_file_e_cartelle/03_archiviazione_compressione.md>)
 - [➡️ successivo](<02_editor_nano.md>)

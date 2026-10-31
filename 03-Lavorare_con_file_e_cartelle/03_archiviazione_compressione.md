@@ -29,7 +29,7 @@ tar -xvf  archivio.tar.gz -C /destinazione/   # estrai in una directory specific
 
 # Elencare il contenuto senza estrarre
 tar -tvf archivio.tar.gz                      # lista il contenuto
-tar -tvf archivio.tar | grep ".sh"            # cerca file specifici
+tar -tvf archivio.tar cartella/script.sh      # mostra un file specifico
 
 # Aggiungere file a un archivio esistente (solo .tar non compresso)
 tar -rvf archivio.tar nuovo_file.txt
@@ -120,6 +120,13 @@ tar -xvf archivio.tar.bz2   # funziona anche senza -j
 
 ---
 
+## Esempi ed Esercizi
+
+- [Esempio: archivi e compressione](esempi/03_archivi.sh)
+- [Esercizio 8: creare e gestire archivi tar](esercizi/README.md#esercizio-8--creare-e-gestire-archivi-tar)
+
+---
+
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<02_editor_nano.md>)
-- [➡️ successivo](<04_ricerca_filtraggio.md>)
+- [⬅️ precedente](<02_comandi_navigazione_gestione.md>)
+- [➡️ successivo](<../04-Visualizzazione_e_Ricerca/01_visualizzazione_file.md>)

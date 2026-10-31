@@ -7,7 +7,7 @@
 ```bash
 ls /
 ls -la /home
-ls -la /etc | head -20
+ls -la /etc
 cat /proc/version
 ```
 
@@ -109,7 +109,7 @@ Poi, usando il globbing, esegui:
 
 3. Trova i file più grandi di 1KB in `/var/log`:
    ```bash
-   find /var/log -size +1k -name "*.log" 2>/dev/null | head -10
+   find /var/log -size +1k -name "*.log" 2>/dev/null
    ```
 
 4. Trova i file modificati nelle ultime 24 ore nella tua home:
@@ -143,7 +143,38 @@ Poi, usando il globbing, esegui:
 
 ---
 
-## Esercizio 8 — Pulizia (opzionale)
+## Esercizio 8 — Creare e gestire archivi tar
+
+Riferimento: [Archiviazione e Compressione](../03_archiviazione_compressione.md).
+
+1. Crea una directory `~/backup_test/` con almeno 3 file al suo interno.
+2. Crea un archivio compresso. Con `-C ~` memorizzi percorsi relativi alla home:
+   ```bash
+   tar -czvf ~/archivio_test.tar.gz -C ~ backup_test/
+   ```
+3. Elenca il contenuto dell'archivio senza estrarlo:
+   ```bash
+   tar -tzvf ~/archivio_test.tar.gz
+   ```
+4. Crea una directory `~/ripristino/` ed estrai l'archivio lì:
+   ```bash
+   mkdir -p ~/ripristino/
+   tar -xzvf ~/archivio_test.tar.gz -C ~/ripristino/
+   ```
+5. Verifica che i file siano stati ripristinati in `~/ripristino/backup_test/`:
+   ```bash
+   ls -l ~/ripristino/backup_test/
+   ```
+
+Per vedere un esempio completo, esegui dalla cartella `esercizi/`:
+
+```bash
+bash ../esempi/03_archivi.sh
+```
+
+---
+
+## Esercizio 9 — Pulizia (opzionale)
 
 Elimina la struttura creata:
 
@@ -168,5 +199,5 @@ Crea uno script `~/backup_home.sh` che:
 ---
 
 - [📑 Indice](<../README.md>)
-- [⬅️ precedente](<../02-Utilizzo_Command_Line/esercizi/README.md>)
+- [⬅️ precedente](<../../02-Utilizzo_Command_Line/esercizi/README.md>)
 - [➡️ successivo](<../../04-Visualizzazione_e_Ricerca/README.md>)

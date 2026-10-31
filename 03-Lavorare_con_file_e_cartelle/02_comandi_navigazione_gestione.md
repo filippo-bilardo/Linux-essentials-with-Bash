@@ -215,3 +215,4 @@ du -h --max-depth=1 ~               # dimensione delle sottodirectory della home
 
 - [📑 Indice](<README.md>)
 - [⬅️ precedente](<01_filesystem_linux.md>)
+- [➡️ successivo](<03_archiviazione_compressione.md>)

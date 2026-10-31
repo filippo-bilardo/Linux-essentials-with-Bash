@@ -1,12 +1,15 @@
 #!/bin/bash
 # =============================================================================
-# 02_archivi.sh
-# Modulo 04 - Archiviazione e Compressione
+# 03_archivi.sh
+# Modulo 03 - Archiviazione e Compressione
+# Riferimento: ../03_archiviazione_compressione.md
 #
 # Dimostra tar, gzip, gunzip, bzip2, zip, unzip in azione.
 # Usa una directory temporanea per tutti i test.
-# Esecuzione: bash 02_archivi.sh
+# Esecuzione dalla cartella esempi: bash 03_archivi.sh
 # =============================================================================
+
+set -euo pipefail
 
 CIANO='\033[0;36m'
 VERDE='\033[0;32m'
@@ -18,7 +21,8 @@ cmd()    { echo -e "${GIALLO}\$ $1${RESET}"; eval "$1"; echo ""; }
 ok()     { echo -e "${VERDE}OK: $1${RESET}"; }
 
 # Preparazione area di lavoro
-WORKDIR=$(mktemp -d /tmp/lab04arch_XXXXX)
+WORKDIR=$(mktemp -d /tmp/lab03arch.XXXXXX)
+trap 'rm -rf -- "$WORKDIR"' EXIT
 cd "$WORKDIR"
 
 titolo "Preparazione file di esempio"
@@ -53,8 +57,9 @@ ok "Estrazione completata"
 
 # --- estrarre solo un file specifico ---
 titolo "4. Estrarre un solo file dall'archivio"
-cmd "tar -xzvf backup.tar.gz progetto/config.txt -C /tmp/"
-cmd "cat /tmp/progetto/config.txt"
+mkdir estratto_singolo
+cmd "tar -xzvf backup.tar.gz -C estratto_singolo/ progetto/config.txt"
+cmd "cat estratto_singolo/progetto/config.txt"
 
 # --- tar .tar.bz2 (più compresso, più lento) ---
 titolo "5. Archivio tar.bz2 (migliore compressione)"
@@ -82,7 +87,7 @@ rm config.txt.gz
 
 # --- zip ---
 titolo "8. Archivio zip (compatibile con Windows)"
-if command -v zip &>/dev/null; then
+if command -v zip &>/dev/null && command -v unzip &>/dev/null; then
     cmd "zip -r archivio.zip progetto/"
     echo "Dimensione zip:"
     cmd "du -sh archivio.zip"
@@ -91,7 +96,7 @@ if command -v zip &>/dev/null; then
     cmd "unzip archivio.zip -d estratto_zip/"
     ok "zip/unzip completato"
 else
-    echo "zip non installato — installa con: sudo apt install zip"
+    echo "zip/unzip non disponibili — installa con: sudo apt install zip unzip"
 fi
 
 # --- riassunto ---
@@ -104,7 +109,5 @@ echo "  .tar.gz  : buona velocità, compatibilità alta"
 echo "  .tar.bz2 : compressione migliore, più lento"
 echo "  .zip     : nessun tar necessario, compatibile con Windows"
 
-# Pulizia
-cd /tmp
-rm -rf "$WORKDIR"
-echo -e "\n${CIANO}Directory temporanea eliminata.${RESET}"
+# La trap elimina la directory temporanea anche in caso di errore.
+echo -e "\n${CIANO}Fine esempio. La directory temporanea viene eliminata.${RESET}"

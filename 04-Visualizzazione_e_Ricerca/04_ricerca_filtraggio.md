@@ -91,5 +91,5 @@ cat file.txt | tr -d '\r'              # rimuovi i fine riga Windows (\r)
 ---
 
 - [📑 Indice](<README.md>)
-- [⬅️ precedente](<03_archiviazione_compressione.md>)
+- [⬅️ precedente](<02_editor_nano.md>)
 - [➡️ successivo](<05_estrazione_dati.md>)
